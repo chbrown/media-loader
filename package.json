@@ -1,0 +1,22 @@
+{
+  "name": "media-loader",
+  "description": "Web media (pre)loader",
+  "version": "0.0.0",
+  "keywords": [
+    "media",
+    "video",
+    "image",
+    "preloader"
+  ],
+  "homepage": "https://github.com/chbrown/media-loader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chbrown/media-loader.git"
+  },
+  "author": "Christopher Brown <io@henrian.com> (http://henrian.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "declarations": "*",
+    "typescript": "*"
+  }
+}
