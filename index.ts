@@ -305,7 +305,7 @@ export class Preloader extends EventEmitter {
   If any of the already known resources match the given resource, return it.
   Otherwise, create a new resource and add it to the list of pending resources.
   */
-  private findOrCreateResource({type, urls}: {type: string, urls: string[]}): Resource {
+  addResource({type, urls}: {type: string, urls: string[]}): Resource {
     const matchingResources = this.resources.filter(resource => resource.equalTo({type, urls}));
     if (matchingResources.length === 0) {
       const resource = new Resource(type, urls);
@@ -367,10 +367,10 @@ export class Preloader extends EventEmitter {
 
   If 'rush' is true, aborts the current loading resource if it isn't the one we want.
   */
-  load(type: string, urls: string[], rush: boolean, callback: (error: Error, element?: HTMLElement) => void) {
+  load({type, urls}: {type: string, urls: string[]}, rush: boolean, callback: (error: Error, element?: HTMLElement) => void) {
     this.log(`Preloader.load(type="${type}", urls=[${urls.join(', ')}], rush=${rush}, <callback>)`);
     const currentResource = this.getCurrentResource();
-    const resource = this.findOrCreateResource({type, urls});
+    const resource = this.addResource({type, urls});
 
     if (rush) {
       this.pause();
