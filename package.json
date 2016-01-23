@@ -1,7 +1,7 @@
 {
   "name": "media-loader",
   "description": "Web media (pre)loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "media",
     "video",
