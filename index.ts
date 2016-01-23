@@ -390,5 +390,7 @@ export class Preloader extends EventEmitter {
       }
       callback(error, resource.element);
     });
+
+    return resource;
   }
 }
